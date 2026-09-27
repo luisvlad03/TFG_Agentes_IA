@@ -2,6 +2,39 @@
 
 Proyecto piloto para validar la integración de OpenSpec + Codex en un equipo multiagente de IA.
 
+## Aplicación de inventario
+
+La aplicación web local permite gestionar productos, registrar entradas y salidas, consultar historial y recibir alertas de stock bajo. El stock se calcula desde movimientos; no se ajusta directamente.
+
+### Requisitos
+
+- Node.js 20 o posterior.
+- npm.
+
+### Ejecutar
+
+```powershell
+npm.cmd install
+npm.cmd run dev
+```
+
+La interfaz se abre en `http://localhost:5173` y la API local en `http://localhost:3001`. La base SQLite se guarda en `data/inventario.db`.
+
+Si npm bloquea scripts de `better-sqlite3` o `esbuild`, apruébalos:
+
+```powershell
+npm.cmd install-scripts approve better-sqlite3 esbuild
+```
+
+### Verificación
+
+```powershell
+npm.cmd test
+npm.cmd run build
+```
+
+La versión inicial es monousuario y de un único almacén; no incluye autenticación, proveedores, códigos de barras, exportación, sincronización, lotes ni caducidades.
+
 ## Estructura
 
 ```
